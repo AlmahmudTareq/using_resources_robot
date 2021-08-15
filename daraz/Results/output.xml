@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210814 18:30:25.986" rpa="false" schemaversion="2">
+<suite id="s1" name="Daraz Resources" source="C:\development\robot-scripts\using_resources\daraz\tests\daraz_resources.robot">
+<test id="s1-t1" name="User can check a product without signing in">
+<kw name="Start Web Test" library="Basic_Keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210814 18:30:26.308" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210814 18:30:26.307" endtime="20210814 18:30:27.764"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210814 18:30:27.765" endtime="20210814 18:30:27.904"/>
+</kw>
+<status status="PASS" starttime="20210814 18:30:26.307" endtime="20210814 18:30:27.905"/>
+</kw>
+<kw name="Navigate To Page" library="OpenPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://www.daraz.com.bd/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210814 18:30:27.917" level="INFO">Opening url 'http://www.daraz.com.bd/'</msg>
+<status status="PASS" starttime="20210814 18:30:27.917" endtime="20210814 18:30:38.510"/>
+</kw>
+<status status="PASS" starttime="20210814 18:30:27.916" endtime="20210814 18:30:38.511"/>
+</kw>
+<kw name="Page Load Verification" library="OpenPage">
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210814 18:30:40.524" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210814 18:30:38.512" endtime="20210814 18:30:40.524"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>SAVE MORE ON APP</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210814 18:30:40.525" endtime="20210814 18:30:40.612"/>
+</kw>
+<status status="PASS" starttime="20210814 18:30:38.511" endtime="20210814 18:30:40.612"/>
+</kw>
+<kw name="Search for a Product" library="SearchProduct">
+<kw name="Enter Product Name" library="SearchProduct">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=q</arg>
+<arg>Router</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210814 18:30:40.614" level="INFO">Typing text 'Router' into text field 'id=q'.</msg>
+<status status="PASS" starttime="20210814 18:30:40.614" endtime="20210814 18:30:40.755"/>
+</kw>
+<status status="PASS" starttime="20210814 18:30:40.613" endtime="20210814 18:30:40.755"/>
+</kw>
+<kw name="Submit Search" library="SearchProduct">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//*[@id="topActionHeader"]/div/div[2]/div/div[2]/form/div/div[2]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210814 18:30:40.757" level="INFO">Clicking button 'xpath=//*[@id="topActionHeader"]/div/div[2]/div/div[2]/form/div/div[2]/button'.</msg>
+<status status="PASS" starttime="20210814 18:30:40.756" endtime="20210814 18:31:01.319"/>
+</kw>
+<status status="PASS" starttime="20210814 18:30:40.755" endtime="20210814 18:31:01.319"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210814 18:31:02.326" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210814 18:31:01.320" endtime="20210814 18:31:02.326"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,600)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210814 18:31:02.329" level="INFO">Executing JavaScript:
+window.scrollTo(0,600)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210814 18:31:02.327" endtime="20210814 18:31:02.375"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210814 18:31:03.379" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210814 18:31:02.376" endtime="20210814 18:31:03.379"/>
+</kw>
+<status status="PASS" starttime="20210814 18:30:40.613" endtime="20210814 18:31:03.380"/>
+</kw>
+<kw name="Verify Search Compilation" library="SearchResults">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>items found for "Router"</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210814 18:31:03.382" endtime="20210814 18:31:03.443"/>
+</kw>
+<status status="PASS" starttime="20210814 18:31:03.381" endtime="20210814 18:31:03.444"/>
+</kw>
+<kw name="Click Product" library="SearchResults">
+<doc>Clicks the first searched product on the page</doc>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=#root &gt; div &gt; div.ant-row.c10-Cg &gt; div.ant-col-24 &gt; div &gt; div.ant-col-20.ant-col-push-4.c1z9Ut &gt; div.c1_t2i &gt; div:nth-child(1) &gt; div &gt; div &gt; div.c3KeDq &gt; div.c16H9d &gt; a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210814 18:31:03.446" level="INFO">Clicking link 'css=#root &gt; div &gt; div.ant-row.c10-Cg &gt; div.ant-col-24 &gt; div &gt; div.ant-col-20.ant-col-push-4.c1z9Ut &gt; div.c1_t2i &gt; div:nth-child(1) &gt; div &gt; div &gt; div.c3KeDq &gt; div.c16H9d &gt; a'.</msg>
+<status status="PASS" starttime="20210814 18:31:03.445" endtime="20210814 18:31:29.478"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210814 18:31:31.489" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210814 18:31:29.478" endtime="20210814 18:31:31.489"/>
+</kw>
+<status status="PASS" starttime="20210814 18:31:03.445" endtime="20210814 18:31:31.490"/>
+</kw>
+<kw name="End Web Test" library="Basic_Keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210814 18:31:31.492" endtime="20210814 18:31:33.751"/>
+</kw>
+<status status="PASS" starttime="20210814 18:31:31.491" endtime="20210814 18:31:33.752"/>
+</kw>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20210814 18:30:26.306" endtime="20210814 18:31:33.753"/>
+</test>
+<doc>This is a basic test on daraz.com.bd.</doc>
+<status status="PASS" starttime="20210814 18:30:25.989" endtime="20210814 18:31:33.757"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Daraz Resources">Daraz Resources</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
